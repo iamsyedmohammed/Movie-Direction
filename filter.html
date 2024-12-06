@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="filter_style.css">
+</head>
+<body>
+    <div class="homebutton">
+        <div><a href="index.html">Home</a></div>
+    </div>
+    <div class="mainContainer">
+        <div class="filterContainer">
+            <div class="navContainer">▼
+                <div class="genreContainer">
+                    <select name="genre" id="genre">
+                        <!-- <option value="" >Genre</option> -->
+                        <option value="28">Action</option>
+                        <option value="12">Adventure</option>
+                        <option value="16">Animation</option>                        
+                        <option value="35">Comedy</option>
+                        <option value="80">Crime</option>
+                        <option value="99">Documentary</option>
+                        <option value="27">Horror</option>
+                        <option value="10749">Romance</option>
+                        <option value="878">Science Fiction</option>
+                        <option value="53">Thriller</option>
+                        <option value="10752">War</option>
+                    </select>
+                </div>
+
+                <div class="yearContainer">
+                    <input type="number" name="year" id="year" placeholder="Enter Year" min="1900" max="2023"> 
+                </div>
+                <button class="filterbutton">Filter Results</button>
+            </div> <!-- Closing the navContainer div -->
+        </div> <!-- Closing the filterContainer div -->
+        
+        <div class="messageContainer hide"></div> <!-- Message container is closed properly -->
+    </div>  <!-- Closing the mainContainer div -->
+
+    <script src="filter.js"></script>
+</body>
+</html>
