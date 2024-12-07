@@ -9,7 +9,7 @@ let recommendationsInput=document.querySelector("#input");
 let changetheme=document.querySelector(".theme")
 let slider=document.querySelector(".switch input[type='checkbox']")
 
-// moviename=inputField.value;
+moviename=inputField.value;
 let apikey=`c2fd154f`
 let url =`https://www.omdbapi.com/`;
 
@@ -42,12 +42,7 @@ slider.addEventListener("change",()=>{
 
 
 button.addEventListener("click",async(evt)=>{
-    if(moviename=""){
-        alert("Please Enter Something")
-        // messageContainer.classList.add("hide")
-        
-        return;
-    }
+   
 
     evt.preventDefault();
     moviename=inputField.value;
@@ -60,7 +55,7 @@ try {
         console.log(response);
 
     if(response.Response==="False"){
-        messageContainer.innerText="";
+        // messageContainer.innerText="";
         
         let errorMessage=document.createElement("div");
         errorMessage.innerText=`Movie not Found :${response.Error}`
@@ -80,10 +75,31 @@ try {
         errorMessage.append(errorImage);
         messageContainer.append(errorMessage);
     }else{
-        messageContainer.innerText="";
+
+      
+
+        const moviesexist=Array.from(messageContainer.children).some(child=>{
+            return child.querySelector(".details")&&
+            child.querySelector(".details").innerText.includes(response.Title);
+        })
+
+        if(moviesexist){
+            alert("This movie is already displayed. ")
+            return;  // Exit if the movie is already in the container
+        }
+
+        
+
+        // messageContainer.innerText="";
 
     let newOptions = document.createElement("div");
     newOptions.classList.add("newOptions");
+
+    let detailsContainer=document.createElement("div");
+    detailsContainer.classList.add("details")
+
+    let contentContainer=document.createElement("div")
+    contentContainer.classList.add("content")
 
     let titleElement=document.createElement("div");
     titleElement.innerText=`Title: ${response.Title}`
@@ -98,9 +114,9 @@ try {
     releasedElement.innerText=`Release Date: ${response.Released}`
     
      let genreElement=document.createElement("div");
-    genreElement.innerText=`Type: ${response.Genre}`
+    genreElement.innerText=`Genre: ${response.Genre}`
     
-
+    
      let ratingElement=document.createElement("div");
     ratingElement.innerText=`${response.Ratings[0].Source}:  ${response.Ratings[0].Value}`
 
@@ -108,15 +124,21 @@ try {
     posterElement.classList.add("size")
     posterElement.src=response.Poster
 
+    let plotElement=document.createElement("div");
+    plotElement.innerText=`Plot:${response.Plot}`
+    plotElement.classList.add("opacity");
+    
+    detailsContainer.append(titleElement,actorElement,releasedElement,directorElement,genreElement,ratingElement);
 
-
-    newOptions.append(posterElement);
-    newOptions.append(titleElement);
-    newOptions.append(actorElement);
-    newOptions.append(releasedElement)
-    newOptions.append(directorElement);
-    newOptions.append(genreElement);
-    newOptions.append(ratingElement);
+    newOptions.append(posterElement,detailsContainer)
+        
+    // newOptions.append(posterElement);
+    // newOptions.append(titleElement);
+    // newOptions.append(actorElement);
+    // newOptions.append(releasedElement)
+    // newOptions.append(directorElement);
+    // newOptions.append(genreElement);
+    // newOptions.append(ratingElement);
     
     messageContainer.prepend(newOptions);
 

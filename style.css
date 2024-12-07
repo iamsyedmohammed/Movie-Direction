@@ -70,13 +70,82 @@ body{
 }
 
 .newOptions{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #deb522;
+    gap: 5px;
+    padding: 10px;
+}
+.details{
     display: flex;
     flex-direction: column;
     border: 1px solid #deb522;
-   
+    border-radius: 5px;
     padding: 10px;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
+/* .content{
+    border: 1px solid #deb522;
+    border-radius: 5px;
+    padding: 10px;
+    transition: 0.3s ease-in;
+    cursor: pointer;
 }
 
+.content:hover{
+    
+        background-color: #deb522;
+        color: #0c0b00;
+        transform: rotateY(180deg);
+       position: relative;
+       z-index: 5;
+    
+} */
+
+.plotElement{
+    position: absolute;
+}
+
+.d:hover{
+    opacity: 1;
+}
+.opacity {
+    opacity: 0;          /* Initially hide the plot text */
+    transition: opacity 0.3s ease;  /* Smooth transition for the fade effect */
+    position: absolute;
+    bottom: 10px;        /* Example positioning of the plot text inside detailsContainer */
+    left: 10px;
+    right: 10px;
+    font-size: 14px;     /* Example font size */
+    color: white;        /* Example text color */
+}
+
+/* .details:hover{
+    background-color: #deb522;
+    color: #0c0b00;
+    transform: rotateY(180deg);
+   
+} */
+
+.details {
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+
+.details div {
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+}
+
+
+
+.details:hover{
+    background-color: #deb522;
+    color: #0c0b00;
+    transform: rotateY(-180deg);
+}
 
 .size{
     height: 210px;
@@ -84,6 +153,7 @@ body{
     border-radius: 5px;
     border: 2px solid #21a544;
     margin-bottom: 5px;
+    padding: 10px;
 }
 
 .errorMessage{
