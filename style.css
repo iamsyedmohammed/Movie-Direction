@@ -9,12 +9,14 @@ h1{
     display: flex;
     justify-content: flex-start;
     font-family: "Poppins",cursive;
+    cursor: pointer;
 }
 
 p{
     display: flex;
     justify-content: flex-start; 
     font-family: "Pacifico",sans-serif;
+    color: #21a544;
 }
 
 
@@ -25,32 +27,22 @@ p{
     justify-content: center;
     align-items: center;
     height: 25vh;
-    gap: 5px;
+    /* gap: 18px; */
 }
 
 
 body{
-    background-color: #141412;
+    /* background-color: #141412;
     color: #deb522;
-    overflow: auto;
-    background-image: url(/Movie\ Direction/src/seats.jpg);
+    overflow: auto; */
+    /* background-image: url(/Movie\ Direction/src/seats.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 
 }
 
 
-#movies{
-    height: 35px;
-    width: 380px;
-    text-align: center;
-    border: none;
-   border-radius: 5px;
-    outline: none;
-    font-family: "Roboto";
-    font-size: 20px;
-    color: #deb522;
-}
+
 
 .movieElements{
     border: 2px solid #deb522;
@@ -58,28 +50,7 @@ body{
 }
 
 
-#button{
-    height: 35px;
-    width: 90px;
-    border: none;
-    border-radius: 8px;
-    color: #141412;
-    cursor: pointer;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    transition: all 0.3s ease-out;
-    font-weight: bolder;
-    font-size: 15px;
-    font-family: "Roboto";
 
-}
-
-#button:hover{
-    background-color: #deb522;
-    color: #0c0b00;
-    transform: scale(1.1);
-    box-shadow: 0 4px 5px #deb522;
-}
 .messageContainer{
     border: 3px solid #deb522;
     height: 470px;
@@ -101,7 +72,8 @@ body{
 .newOptions{
     display: flex;
     flex-direction: column;
-    /* border: 1px solid #deb522; */
+    border: 1px solid #deb522;
+   
     padding: 10px;
 }
 
@@ -110,6 +82,8 @@ body{
     height: 210px;
     width: 210px;
     border-radius: 5px;
+    border: 2px solid #21a544;
+    margin-bottom: 5px;
 }
 
 .errorMessage{
@@ -197,6 +171,9 @@ display: none;
 
 .titleContainer{
     display: flex;
+    border: 1px solid #deb522;
+    border-radius: 8px;
+    box-shadow: #deb522;
     
 }
 
@@ -205,6 +182,7 @@ display: none;
     display: flex;
     flex-direction: column;
     margin-left: 55px;
+    /* width: 50%; */
     /* justify-content: flex-start; */
 }
 
@@ -212,4 +190,84 @@ a{
     text-decoration: none;
     color: #deb522;
 }
+
+.dark{
+    background-color:black;
+    color: #deb522;
+}
+.light{
+    background-color: white;
+    color: black;
+}
+
+
+.filtersss{
+    font-size: large;
+    font-family: "Poppins";
+    letter-spacing: 1px;
+    transition: 0.3s ease-in-out all;
+    font-weight:500;
+}
+
+.filtersss:hover{
+    transform: scale(1.1);
+    color: #21a544;
+}
+
+
+a:hover{
+    color: #21a544;
+}
+
+/* .searchContainer{
+    width: 100%;
+    position: relative;
+    display: flex;
+} */
+
+
+#movies{
+    height: 35px;
+    width: 380px;
+    text-align: left;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    font-family: "Roboto";
+    font-size: 20px;
+    color: #deb522;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border: 2px solid #deb522;
+}
+
+
+#Searchbutton{
+    height: 35px;
+    width: 90px;
+    border: none;
+    border-radius: 5px;
+    color: #deb522;
+    cursor: pointer;
+    border:2px solid #deb522;
+    transition: all 0.3s ease-out;
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: "Roboto";
+    background-color: transparent;
+    margin-left: 5px;
+
+}
+
+#Searchbutton:hover{
+    background-color: #deb522;
+    color: #0c0b00;
+    transform: scale(1.1);
+    border-color: #21a544;
+    /* box-shadow: 0 4px 5px #deb522; */
+}
+
+
 

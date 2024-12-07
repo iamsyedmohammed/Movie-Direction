@@ -10,18 +10,11 @@ body{
     overflow: auto;
     background-image: url(/Movie\ Direction/src/filter.jpg);
     background-size: cover;
+    
 
 }
 
-.filterContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 15px;
-    margin-top: 65px;
-    justify-content: center;
-   
-}
+
 
 
 
@@ -44,16 +37,41 @@ body{
 
 .navContainer{
     display: flex;
+    flex-direction: row;
     gap: 10px;
     justify-content: center;
-    padding-bottom: 15px;
     align-content: center;
+    padding-bottom: 15px;
+    width: 900px;
+    
 }
 
 
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.filterContainer{
+    display: flex;
+    gap: 5px;
+    
+    justify-content: center;
+    align-items: center;
+
+   
+}
+
 .movieElements{
-    border: px solid #deb522;
+    border: 1px solid #deb522;
     padding: 7px;
+    margin: 5px;
+    border-radius: 8px;
     
 }
 
@@ -72,7 +90,7 @@ body{
     font-family: "Roboto";
     border-radius: 8px;
     display: flex;
-    background-color:rgba(12, 5, 5, 0.509);
+    background-color:rgba(12, 5, 5, 0.58);
     
     
 }
@@ -91,3 +109,106 @@ a{
 a:hover{
     color: #21a544;
 }
+
+
+.titleContainer{
+    display: flex;
+    
+}
+
+.name{
+    display: flex;
+    justify-content: flex-start;
+    font-family: "Poppins";
+    cursor: pointer;
+    font-size: 45px;
+    font-weight: bolder;
+    margin: 10px;
+}
+
+p{
+    margin: 10px; 
+}
+
+
+.genreContainer select{
+   
+    background-color: rgba(22, 21, 18, 0.8);
+    color: #deb522; /* Golden text color */
+    border: 2px solid #deb522; /* Golden border */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    width: 120px;
+    height: 40px;
+}
+
+
+
+.genreContainer select:hover {
+    background-color: rgba(42, 41, 38, 0.9);
+    border-color: #21a544; /* Green highlight on hover */
+    transform: scale(1.04);
+}
+
+.genreContainer select:focus {
+    box-shadow: 0 0 10px rgba(33, 165, 68, 0.5); /* Green glow effect */
+}
+
+
+.yearContainer input{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: rgba(22, 21, 18, 0.8);
+    color: #deb522;
+    border: 2px solid #deb522;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    outline: none;
+    font-size: 16px;
+    width: 120px;
+    height: 40px;
+    padding-left: 25px;
+}
+
+/* Styling for year input */
+
+
+.yearContainer input:hover {
+    background-color: rgba(42, 41, 38, 0.9);
+    border-color: #21a544;
+    transform: scale(1.05);
+}
+
+.yearContainer input:focus {
+    box-shadow: 0 0 10px rgba(33, 165, 68, 0.5);
+}
+
+/* Existing filter button styles can remain the same or be enhanced */
+.filterbutton {
+    background-color: rgba(22, 21, 18, 0.8);
+    color: #deb522;
+    border: 2px solid #deb522;
+    /* border-radius: 50px; */
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;
+    /* padding-bottom: 15px;
+    width: auto;
+    text-align: center;
+    height: 30px; */
+    width: auto;
+}
+
+.filterbutton:hover {
+    background-color: #deb522;
+    color: #0c0b00;
+    transform: scale(1.1);
+    box-shadow: 0 4px 5px rgba(33, 165, 68, 0.5);
+}
+

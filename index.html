@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+   
+    <link rel="stylesheet" href="toggle.css">
 </head>
 <body>
    
@@ -12,8 +14,11 @@
         <form class="forms">
            <div class="titleContainer">
             <div class="titles">
-                <h1>Movie Direction </h1>
+                
+                    <h1>Movie Direction <a href="index.html"></a> </h1>
                 <p>Guiding You to Great Films</p>
+               
+                
             </div>
                 
                 
@@ -22,7 +27,11 @@
                     <div class="navbar">
                         <div class="filtersss"><a href="filter.html">Filter</a></a></div>
                         <div class="filtersss"><a href="recommendations.html">Recommendation</a></a></div>
-                        
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                                <!-- <button class="theme">Change Mode</button> -->
                     </div>
                 </nav>
             </div>
@@ -36,10 +45,10 @@
             </div>
             
 
-            <div class="recommendationContainer">
+            <!-- <div class="recommendationContainer">
                 <input type="text" name="recommend" id="input" placeholder="Enter Your Movie">
                 <button id="recommend">Get Recommendation</button>
-            </div>
+            </div> -->
             
            
         </div>
