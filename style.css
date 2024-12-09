@@ -10,6 +10,7 @@ h1{
     justify-content: flex-start;
     font-family: "Poppins",cursive;
     cursor: pointer;
+    color: #deb522;
 }
 
 p{
@@ -31,16 +32,40 @@ p{
 }
 
 
-body{
-    /* background-color: #141412;
-    color: #deb522;
-    overflow: auto; */
-    /* background-image: url(/Movie\ Direction/src/seats.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; */
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    background-color: #141412; /* Uncomment if you want a background color */
+    color: #deb522; /* Uncomment for text color */
+}
+
+.background-section {
+    height: 50px;
+    background-color: #0c0b00;
+    color: #deb522;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-align: center;
+    /* margin-top: 350px; */
+    font-size: 18px;
+    gap: 5px;
+}
+
+
+/* Ensure main content area pushes the footer down */
+main {
+    flex: 1;
+}
 
 
 
@@ -52,7 +77,7 @@ body{
 
 
 .messageContainer{
-    border: 3px solid #deb522;
+    /* border: 3px solid #deb522; */
     height: 470px;
     width: 600px;
     display: flex;
@@ -65,6 +90,7 @@ body{
     font-family: "Roboto";
     border-radius: 8px;
     display: flex;
+    background-color: #00000058;
     
     
 }
@@ -73,7 +99,7 @@ body{
     position: relative;
     display: flex;
     flex-direction: row;
-    border: 1px solid #deb522;
+    /* border: 1px solid #deb522; */
     gap: 5px;
     padding: 10px;
 }
@@ -82,9 +108,11 @@ body{
     flex-direction: column;
     border: 1px solid #deb522;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
     transition: 0.3s ease-in;
     cursor: pointer;
+    background-color: #ffffffd0;
+    color: #0c0b00;
 }
 /* .content{
     border: 1px solid #deb522;
@@ -148,12 +176,15 @@ body{
 }
 
 .size{
-    height: 210px;
-    width: 210px;
-    border-radius: 5px;
-    border: 2px solid #21a544;
-    margin-bottom: 5px;
-    padding: 10px;
+    height: 200px;
+    width: 200px;
+    border-radius: 8px;
+    border: 2px solid #deb522;
+    /* margin-bottom: 5px; */
+    padding: 7px;
+    padding-bottom: 10px;
+    background-color: #ffffffd0;
+    /* object-fit: fill; */
 }
 
 .errorMessage{
@@ -212,12 +243,7 @@ display: none;
 }
 
 
-.reccomend{
-    border: 1px solid #deb522;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-}
+
 
 
 .navbar{
@@ -244,6 +270,7 @@ display: none;
     border: 1px solid #deb522;
     border-radius: 8px;
     box-shadow: #deb522;
+    background-color: #00000058;
     
 }
 
@@ -264,10 +291,18 @@ a{
 .dark{
     background-color:black;
     color: #deb522;
+    background-image: url(./src/seats.jpg);
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
 }
 .light{
     background-color: white;
-    color: black;
+    color: #deb522;
+    background-image: url(./src/jakob-owens-CiUR8zISX60-unsplash.jpg);
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
 }
 
 
@@ -339,5 +374,8 @@ a:hover{
     /* box-shadow: 0 4px 5px #deb522; */
 }
 
-
+.background-section{
+    height: 100px;
+    background-color: #0c0b00;
+}
 

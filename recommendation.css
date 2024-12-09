@@ -1,0 +1,114 @@
+
+
+body {
+    height: 80vh;
+    background-color: #141412; /* Uncomment if you want a background color */
+    color: #deb522; /* Uncomment for text color */
+}
+.recommendationContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#input{
+    height: 40px;
+    width:550px;
+    outline: none;
+    border-radius: 50px;
+    padding-left: 10px;
+    border: 1px solid #deb522;
+    background-color: transparent;
+    color: #deb522;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#recommend{
+    margin-bottom: 10px;
+}
+
+.recommendsC{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+   gap: 10px ;
+    
+}
+
+
+.messageContainer{
+    border: 3px solid #deb522;
+    height: 470px;
+    width: 600px;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    align-self: center;
+    justify-self: center;
+    flex-direction: column;
+    overflow: auto;
+    font-family: "Roboto";
+    border-radius: 8px;
+    display: flex;
+    background-color: #00000058;
+    
+    
+}
+
+.hide{
+    display: none;
+}
+
+.btn-22{
+    margin-bottom: 10px;
+    width: 350px;
+    transition: 0.3s ease-in all;
+
+}
+
+.btn-22:hover{
+    transform:rotateX(180deg)
+}
+
+
+.reccomend{
+    border: 1px solid #deb522;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: #deb522;
+    color: #deb522;
+    font-size: 35px;
+    text-decoration: none;
+    font-family: "Poppins",sans-serif;
+}
+
+a:hover{
+    color: #21a544;
+}
+.errorMessage{
+    /* border: 5px solid; */
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+p{
+    margin: 10px; 
+    display: flex;
+    justify-content: flex-start; 
+    font-family: "Pacifico",cursive;
+    color: #21a544;
+}

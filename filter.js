@@ -32,6 +32,7 @@ filterButton.addEventListener("click", async (event) => {
 
         let movieTitle=document.createElement("div");
         movieTitle.innerText=`Title: ${element.title}`;
+        // movieTitle.style.color="green"
 
         let moviePlot=document.createElement("div");
         moviePlot.innerText=`Plot: ${element.overview}`;

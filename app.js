@@ -103,6 +103,7 @@ try {
 
     let titleElement=document.createElement("div");
     titleElement.innerText=`Title: ${response.Title}`
+    titleElement.style.color="green"
   
     let directorElement=document.createElement("div");
     directorElement.innerText=`Director: ${response.Director}`
@@ -123,6 +124,7 @@ try {
     let posterElement=document.createElement("img");
     posterElement.classList.add("size")
     posterElement.src=response.Poster
+  
 
     let plotElement=document.createElement("div");
     plotElement.innerText=`Plot:${response.Plot}`
