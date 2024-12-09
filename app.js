@@ -134,13 +134,7 @@ try {
 
     newOptions.append(posterElement,detailsContainer)
         
-    // newOptions.append(posterElement);
-    // newOptions.append(titleElement);
-    // newOptions.append(actorElement);
-    // newOptions.append(releasedElement)
-    // newOptions.append(directorElement);
-    // newOptions.append(genreElement);
-    // newOptions.append(ratingElement);
+
     
     messageContainer.prepend(newOptions);
 
