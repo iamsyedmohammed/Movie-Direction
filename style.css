@@ -29,8 +29,6 @@ p{
     justify-content: center;
     align-items: center;
     height: 15vh;
-    /* border: 1px solid #deb522; */
-
 }
 
 
@@ -60,7 +58,6 @@ body {
     text-align: center;
     font-size: 18px;
     gap: 5px;
-    /* border: 1px solid #deb522; */
 }
 
 
@@ -79,8 +76,7 @@ main {
 
 
 
-.messageContainer{
- 
+.messageContainer{ 
     height: 470px;
     width: 600px;
     display: flex;
@@ -93,8 +89,6 @@ main {
     border-radius: 8px;
     display: flex;
     background-color: #00000058;
-    
-    
 }
 
 .newOptions{
@@ -117,27 +111,6 @@ main {
     color: #0c0b00;
 }
 
-
-.plotElement{
-    position: absolute;
-}
-
-.d:hover{
-    opacity: 1;
-}
-.opacity {
-    opacity: 0;          /* Initially hide the plot text */
-    transition: opacity 0.3s ease;  /* Smooth transition for the fade effect */
-    position: absolute;
-    bottom: 10px;        /* Example positioning of the plot text inside detailsContainer */
-    left: 10px;
-    right: 10px;
-    font-size: 14px;     /* Example font size */
-    color: white;        /* Example text color */
-}
-
-
-
 .details {
     perspective: 1000px; /* Add perspective for 3D effect */
 }
@@ -147,8 +120,6 @@ main {
     transform-style: preserve-3d;
     transition: transform 0.3s;
 }
-
-
 
 .details:hover{
     background-color: #deb522;
@@ -161,7 +132,6 @@ main {
     width: 200px;
     border-radius: 8px;
     border: 2px solid #deb522;
-   
     padding: 7px;
     padding-bottom: 10px;
     background-color: #ffffffd0;
@@ -180,15 +150,11 @@ border: 1px solid #deb522;
 display: none;
 }
 
-
 .hiding{
     pointer-events: none;
     opacity: 0.8;
     
 }
-
-
-
 
 .navContainer{
     display: flex;
@@ -197,52 +163,17 @@ display: none;
 }
 
 
-.filterContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 15px;
-    margin-top: 65px;
-    border: 1px solid #deb522;
-   
-}
-
-
-
-.filterbutton{
-    border-radius: 5px;
-    width: 115px;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-    border: none;
-}
-
-
-
-.filterbutton:hover{
-    background-color: #deb522;
-    color: #0c0b00;
-    transform: scale(1.1);
-    box-shadow: 0 4px 5px #21a544;
-}
-
-
-
-
-
 .navbar{
     display: flex;
     justify-content: space-evenly;
     width: 50%;
     color:#deb522;
     text-decoration: none;
-    /* border: 1px solid #deb522; */
 }
 
 .navigation{
     display: flex;
     flex-direction: row;
-    /* border: 1px solid #deb522; */
     padding-top: 20px;
     width: 950px;
     justify-content: flex-end;
@@ -252,8 +183,6 @@ display: none;
 
 .titleContainer{
     display: flex;
-    /* border: 1px solid #deb522; */
-    /* border: 1px solid #deb522; */
     border-radius: 5px;
     box-shadow: 0px 3px 6px #deb522;
     background-color: #00000058;
@@ -279,7 +208,6 @@ a{
     color: #deb522;
     background-image: url(./src/seats.jpg);
     background-size: cover;
-   
     background-repeat: no-repeat;
 }
 .light{
@@ -291,19 +219,6 @@ a{
     background-repeat: no-repeat;
 }
 
-
-.filtersss{
-    font-size: large;
-    font-family: "Poppins";
-    letter-spacing: 1px;
-    transition: 0.3s ease-in-out all;
-    font-weight:500;
-}
-
-.filtersss:hover{
-    transform: scale(1.1);
-    color: #21a544;
-}
 
 
 a:hover{
