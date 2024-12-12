@@ -12,6 +12,16 @@ let url =`https://www.omdbapi.com/`;
 let tmdbapikey=`23a3bc273421de99e019d20aa46775ff`;
 let tmdburl=`https://api.themoviedb.org/`
 
+const showloader=()=>{
+    let loader=document.querySelector(".filter-loader");
+    loader.classList.remove("hide");
+}
+
+const hideloader=()=>{
+    let loader=document.querySelector(".filter-loader");
+    loader.classList.add("hide");
+}
+
 recommendationsBTN.addEventListener("click", async(event)=>{
     messageContainer.classList.remove("hide")
     messageContainer.innerText=""
@@ -23,6 +33,7 @@ recommendationsBTN.addEventListener("click", async(event)=>{
     const getIMDBID=async (movies) => {
         //  let movies=inputField.value
         // console.log(movies);
+       
             let link=await fetch(`${url}?t=${movies}&apikey=${apikey}`);
             let data= await link.json();
             console.log(data);
@@ -81,23 +92,39 @@ recommendationsBTN.addEventListener("click", async(event)=>{
         // }
     
         const getRecommendation=async (movies) => {
-            let tmdbid=await useIMDBID(movies);
-            let link= await fetch(`${tmdburl}3/movie/${tmdbid}/recommendations?api_key=${tmdbapikey}`)
-            let data= await link.json();
-            console.log(data);
-            data.results.forEach(element => {
-                console.log(element.title)
-                let reccomend=document.createElement("div");
-                reccomend.classList.add("reccomend")
-                let titles=element.title;
-                reccomend.append(titles)
-                messageContainer.append(reccomend);
-                // messageContainer.textContent += element.title;
-            });
+            showloader();
 
+            // await new Promise((resolve) => setTimeout(resolve,3000))
+           
+                try {let tmdbid=await useIMDBID(movies);
+                    let link= await fetch(`${tmdburl}3/movie/${tmdbid}/similar?api_key=${tmdbapikey}`)
+                    let data= await link.json();
+                    console.log(data);
+                    data.results.forEach(element => {
+                        console.log(element.title)
+                        let reccomend=document.createElement("div");
+                        reccomend.classList.add("reccomend")
+                        let titles=element.title;
+                        reccomend.append(titles)
+                        messageContainer.append(reccomend);
+                        // messageContainer.textContent += element.title;
+                        
+                    });
+                    
+                } catch (error) {
+                    let errorMessage = document.createElement("div");
+                    errorMessage.textContent = `Error: ${error}`;
+                    messageContainer.append(errorMessage);
+                }finally{
+                    hideloader();
+                }
+                
+    
+         
+           
            
     
         }
+    await getRecommendation(movies);
     
-        await getRecommendation(movies);
 })

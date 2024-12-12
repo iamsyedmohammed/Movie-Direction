@@ -5,12 +5,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Borel&family=Creepster&family=Galada&family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Londrina+Shadow&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&family=Ultra&display=swap');
+
 body{
     background-color: #141412;
     color: #deb522;
     overflow: auto;
+    height: auto;
     background-image: url(/Movie\ Direction/src/filter.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     
 
 }
@@ -40,6 +44,7 @@ body{
     align-content: center;
     padding-bottom: 15px;
     width: 900px;
+    /* border: 1px solid #deb522; */
     
 }
 
@@ -50,6 +55,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* border: 1px solid #deb522; */
+
     
 }
 
@@ -57,7 +64,8 @@ body{
 .filterContainer{
     display: flex;
     gap: 5px;
-    
+    /* border: 1px solid #deb522; */
+
     justify-content: center;
     align-items: center;
 
@@ -69,6 +77,10 @@ body{
     padding: 7px;
     margin: 5px;
     border-radius: 8px;
+    /* font-family: "Poppins"; */
+    color:  #ffb3ff;
+    /* border: 1px solid #deb522; */
+
     
 }
 
@@ -81,6 +93,8 @@ body{
     justify-self: center;
     flex-direction: column;
     overflow: auto;
+    /* border: 1px solid #deb522; */
+
     font-family: "Roboto";
     border-radius: 8px;
     display: flex;
@@ -97,6 +111,8 @@ body{
 a{
     color: #deb522;
     font-size: 35px;
+    /* border: 1px solid #deb522; */
+
     text-decoration: none;
     font-family: "Poppins",sans-serif;
 }
@@ -108,6 +124,8 @@ a:hover{
 
 .titleContainer{
     display: flex;
+    /* border: 1px solid #deb522; */
+
     
 }
 
@@ -118,6 +136,8 @@ a:hover{
     cursor: pointer;
     font-size: 45px;
     font-weight: bolder;
+    /* border: 1px solid #deb522; */
+
     margin: 10px;
 }
 
@@ -126,7 +146,9 @@ p{
     display: flex;
     justify-content: flex-start; 
     font-family: "Pacifico",cursive;
-    color: #21a544;
+    /* border: 1px solid #deb522; */
+    color: #f1d87e;
+    
 }
 
 
@@ -185,6 +207,8 @@ p{
     box-shadow: 0 0 10px rgba(33, 165, 68, 0.5);
 }
 
+
+
 /* Existing filter button styles can remain the same or be enhanced */
 .filterbutton {
     background-color: rgba(22, 21, 18, 0.8);
@@ -208,3 +232,110 @@ p{
     box-shadow: 0 4px 5px rgba(33, 165, 68, 0.5);
 }
 
+.filter-loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Overlay style */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.filter-loader.hide {
+    display: none; /* Hide loader by default */
+}
+
+.filter-loader .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff; /* Spinner color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.filter-loader p {
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+@media (max-width:1000px){
+
+    .navContainer{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 8px;
+    }
+
+    a{
+        font-size: 16px;
+    }
+
+    p{
+        font-size: 10px;
+    }
+
+   #genre,.filterbutton{
+        width: auto;
+        font-size: 12px;
+
+    }
+
+    #year{
+        width: 70px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .messageContainer{
+        width: auto;
+        margin-bottom: auto;
+    }
+    /* .mainContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+
+
+        
+}
+
+.styling{
+    display: flex;
+    gap: 3px;
+}
+
+.key{
+    color: turquoise;
+    font-weight: bolder;
+    font-family: "Poppins";
+}
+
+
+.value{
+    color: rgb(152, 232, 224);
+    font-family: "Roboto";
+    /* font-weight: bold; */
+}

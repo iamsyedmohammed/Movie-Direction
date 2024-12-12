@@ -9,6 +9,17 @@ let recommendationsInput=document.querySelector("#input");
 let changetheme=document.querySelector(".theme")
 let slider=document.querySelector(".switch input[type='checkbox']")
 
+
+const showloader=()=>{
+    let loader=document.querySelector(".loader");
+    loader.classList.remove("hide");
+}
+
+const hideloader=()=>{
+    let loader=document.querySelector(".loader");
+    loader.classList.add("hide");
+}
+
 moviename=inputField.value;
 let apikey=`c2fd154f`
 let url =`https://www.omdbapi.com/`;
@@ -42,8 +53,10 @@ slider.addEventListener("change",()=>{
 
 
 button.addEventListener("click",async(evt)=>{
-   
-
+   setTimeout(()=>{
+    
+   })
+    showloader();
     evt.preventDefault();
     moviename=inputField.value;
     messageContainer.classList.remove("hide")
@@ -73,7 +86,7 @@ try {
 
        
         errorMessage.append(errorImage);
-        messageContainer.append(errorMessage);
+        messageContainer.prepend(errorMessage);
     }else{
 
       
@@ -101,25 +114,97 @@ try {
     let contentContainer=document.createElement("div")
     contentContainer.classList.add("content")
 
+    let title=document.createElement("div");
+    title.innerText=`Title:`
+    title.classList.add("key")
+
+    let titleData=document.createElement("div");
+    titleData.innerText=`${response.Title}`
+    titleData.classList.add("value");
+
     let titleElement=document.createElement("div");
-    titleElement.innerText=`Title: ${response.Title}`
-    titleElement.style.color="green"
-  
+    titleElement.append(title,titleData)
+    titleElement.classList.add("styling");
+
+    //Director Element
+
+    let director=document.createElement("div");
+    director.innerText=`Director:`
+    director.classList.add("key")
+
+    let directorData=document.createElement("div");
+    directorData.innerText=`${response.Director}`
+    directorData.classList.add("value");
+
     let directorElement=document.createElement("div");
-    directorElement.innerText=`Director: ${response.Director}`
+    directorElement.append(director,directorData)
+    directorElement.classList.add("styling");
+  
+    // let directorElement=document.createElement("div");
+    // directorElement.innerText=`Director: ${response.Director}`
+
+    //Actor
+    let actor=document.createElement("div");
+    actor.innerText=`Actor:`
+    actor.classList.add("key")
+
+    let actorData=document.createElement("div");
+    actorData.innerText=`${response.Actors}`
+    actorData.classList.add("value");
 
     let actorElement=document.createElement("div");
-    actorElement.innerText=`Actors: ${response.Actors}`
+    actorElement.append(actor,actorData)
+    actorElement.classList.add("styling");
+    // let actorElement=document.createElement("div");
+    // actorElement.innerText=`Actors: ${response.Actors}`
 
-     let releasedElement=document.createElement("div");
-    releasedElement.innerText=`Release Date: ${response.Released}`
+    //release Date
+    let release=document.createElement("div");
+    release.innerText=`Release Date:`
+    release.classList.add("key")
+
+    let releaseData=document.createElement("div");
+    releaseData.innerText=`${response.Released}`
+    releaseData.classList.add("value");
+
+    let releaseElement=document.createElement("div");
+    releaseElement.append(release,releaseData)
+    releaseElement.classList.add("styling");
+
+    //  let releasedElement=document.createElement("div");
+    // releasedElement.innerText=`Release Date: ${response.Released}`
     
-     let genreElement=document.createElement("div");
-    genreElement.innerText=`Genre: ${response.Genre}`
+
+    let genre=document.createElement("div");
+    genre.innerText=`Genre:`
+    genre.classList.add("key")
+
+    let genreData=document.createElement("div");
+    genreData.innerText=`${response.Genre}`
+    genreData.classList.add("value");
+
+    let genreElement=document.createElement("div");
+    genreElement.append(genre,genreData)
+    genreElement.classList.add("styling");
+
+    //  let genreElement=document.createElement("div");
+    // genreElement.innerText=`Genre: ${response.Genre}`
+
+    let rating=document.createElement("div");
+    rating.innerText=`Ratings:`
+    rating.classList.add("key")
+
+    let ratingData=document.createElement("div");
+    ratingData.innerText=`${response.Ratings[0].Source}:  ${response.Ratings[0].Value}`
+    ratingData.classList.add("value");
+
+    let ratingElement=document.createElement("div");
+    ratingElement.append(rating,ratingData)
+    ratingElement.classList.add("styling");
     
     
-     let ratingElement=document.createElement("div");
-    ratingElement.innerText=`${response.Ratings[0].Source}:  ${response.Ratings[0].Value}`
+    //  let ratingElement=document.createElement("div");
+    // ratingElement.innerText=`${}`
 
     let posterElement=document.createElement("img");
     posterElement.classList.add("size")
@@ -130,7 +215,7 @@ try {
     plotElement.innerText=`Plot:${response.Plot}`
     plotElement.classList.add("opacity");
     
-    detailsContainer.append(titleElement,actorElement,releasedElement,directorElement,genreElement,ratingElement);
+    detailsContainer.append(titleElement,actorElement,releaseElement,directorElement,genreElement,ratingElement);
 
     newOptions.append(posterElement,detailsContainer)
         
@@ -144,7 +229,9 @@ try {
 } catch (error) {
     console.error("Error fetching movie data:", error);
 }
-   
+   finally{
+    hideloader();
+   }
    
     
 })
