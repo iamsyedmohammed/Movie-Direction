@@ -451,10 +451,18 @@ a:hover{
         font-size: 8px;
         width: auto;
     }
+    .searchContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+    }
     .inputContainer{
         width: auto;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        gap: 5px;
+        
     }
 
     .background-section{
