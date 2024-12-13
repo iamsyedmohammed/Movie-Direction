@@ -458,6 +458,7 @@ a:hover{
         align-items: center;
         gap: 17px;
         margin-top: 15px;
+        margin-bottom: 10px;
 
     }
     .inputContainer{
@@ -469,6 +470,10 @@ a:hover{
     }
     .plotElement{
         font-size: 8px;
+    }
+    .newOptions{
+        margin-top: 10px;
+        border: none;
     }
     #Searchbutton{
         display: flex;
@@ -517,6 +522,7 @@ a:hover{
     .messageContainer{
         width: auto;
         height: auto;
+        border: none;
     }
 
     .titles{
