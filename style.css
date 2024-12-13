@@ -453,6 +453,8 @@ a:hover{
     }
     .inputContainer{
         width: auto;
+        display: flex;
+        flex-direction: column;
     }
 
     .background-section{
@@ -467,6 +469,9 @@ a:hover{
 
     #movies{
         height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     a{
