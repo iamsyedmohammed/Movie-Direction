@@ -467,6 +467,9 @@ a:hover{
         gap: 5px;
         
     }
+    .plotElement{
+        font-size: 8px;
+    }
     #Searchbutton{
         display: flex;
         justify-content: center;
