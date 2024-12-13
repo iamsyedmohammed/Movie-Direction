@@ -464,6 +464,10 @@ a:hover{
         gap: 5px;
         
     }
+    #Searchbutton{
+        display: flex;
+        justify-content: center;
+    }
 
     .background-section{
         width: auto;
