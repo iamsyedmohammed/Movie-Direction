@@ -58,6 +58,7 @@ button.addEventListener("click",async(evt)=>{
    })
     showloader();
     evt.preventDefault();
+    // evt.stopPropagation();
     moviename=inputField.value;
     messageContainer.classList.remove("hide")
     
@@ -213,15 +214,32 @@ try {
 
     let plotElement=document.createElement("div");
     plotElement.innerText=`Plot:${response.Plot}`
-    plotElement.classList.add("opacity");
+    plotElement.classList.add("plotElement");
+    console.log(plotElement);
+    let ogContainer=document.createElement("div")
+
+    ogContainer.append(titleElement,actorElement,releaseElement,directorElement,genreElement,ratingElement);
+    ogContainer.classList.add("ogContainer")
     
-    detailsContainer.append(titleElement,actorElement,releaseElement,directorElement,genreElement,ratingElement);
+    detailsContainer.append(ogContainer,plotElement);
 
     newOptions.append(posterElement,detailsContainer)
         
 
+    // detailsContainer.addEventListener("mouseenter",(evt)=>{
+       
+    //     plotElement.classList.remove("hide")
     
+    // })
+
+    // detailsContainer.addEventListener("mouseleave",(evt)=>{
+        
+    //     plotElement.classList.add("hide")
+        
+    // })
     messageContainer.prepend(newOptions);
+
+
 
 
     }

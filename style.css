@@ -106,25 +106,71 @@ main {
     padding: 10px;
 }
 .details{
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #deb522;
+    border-radius: 5px;
+    /* padding: 10px 10px 0px 10px; */
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    background-color: #ffffffd0;
+    color: #0c0b00;
+    overflow: hidden;
+}
+
+.ogContainer{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #deb522; */
     border-radius: 5px;
     padding: 10px 10px 0px 10px;
     transition: 0.3s ease-in;
     cursor: pointer;
     background-color: #ffffffd0;
     color: #0c0b00;
+    backface-visibility: hidden;
 }
 
 
 .plotElement{
+    opacity: 0;
     position: absolute;
+    visibility: hidden;
+    /* bottom: 10px; */
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; /* Example font size */
+    color: #000; /* Text color */
+    background-color: rgba(255, 255, 255, 0.8); /* Background to make text readable */
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.details:hover .plotElement {
+    visibility: visible;
+    opacity: 1; /* Show plot text on hover */
+    transform: rotateY(180deg);
+    /* transition-delay: 0.4s; */
 }
 
-.d:hover{
-    opacity: 1;
+.details:hover .ogContainer {
+    visibility: hidden;
+    transform: rotateY(180deg);
+    opacity: 0; /* Hide the original content on hover */
+    transition: opacity 0.3s ease; /* Smooth fade-out effect */
+    transition-delay: 0.3s;
 }
+
+/* .d:hover{
+    opacity: 1;
+} */
+
 .opacity {
     opacity: 0;          /* Initially hide the plot text */
     transition: opacity 0.3s ease;  /* Smooth transition for the fade effect */
@@ -150,10 +196,15 @@ main {
 
 
 
-.details:hover{
+
+.ogContainer:hover{
     background-color: #deb522;
     color: #0c0b00;
     transform: rotateY(-180deg);
+}
+
+.details:hover{
+    transform: rotateY(180deg);
 }
 
 .size{
@@ -450,7 +501,17 @@ a:hover{
         display: flex;
         justify-content: center;
         align-items: center;
+        
     }
+    .value{
+        font-size: 10px;
+    }
+    .key{
+        font-size: 12px;
+    }
+    /* .value{
+        font-size: 10px;
+    } */
   }
 
   .styling{
@@ -469,4 +530,5 @@ a:hover{
     color:#333333;
     font-family: "Poppins";
     /* font-weight: bold; */
+    /* font-size: 14px; */
 }
